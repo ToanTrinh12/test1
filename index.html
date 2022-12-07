@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="clone.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <title>Test</title>
+    <link rel="icon" type="image/x-icon" href="picture/favicon.ico">
+    <script src="mapdata.js"></script>
+    <script src="countrymap.js"></script>
+    <title>Travel</title>
 </head>
+
 <body>
     <nav class="menu" id="menu_nav">
         <ul>
             <div class="logo">
                 <img src="./picture/logo.jpg" alt="ảnh">
             </div>
-            
+
             <div class="box">
                 <li><a href="" class="nav-link"><img src="./picture/home1.jpg" alt="ảnh">HOME</a></li>
             </div>
@@ -35,98 +40,62 @@
             </div>
         </ul>
     </nav>
+        
     <div class="picture-paddyfield">
         <div class="khoi_anh">
             <img class="mySlides w3-animate-right" src="./picture/canhdong1.jpg">
             <img class="mySlides w3-animate-right" src="./picture/canhdong2.jpg">
             <img class="mySlides w3-animate-right" src="./picture/canhdong3.jpg">
-<div id="homepage-slider" class="st-slider">
-    <input type="radio" class="cs_anchor radio" name="slider" id="slide1"/>
-    <input type="radio" class="cs_anchor radio" name="slider" id="slide2"/>
-    <input type="radio" class="cs_anchor radio" name="slider" id="slide3"/>
-    <input type="radio" class="cs_anchor radio" name="slider" id="play1" checked=""/>
+            <div id="homepage-slider" class="st-slider">
+                <input type="radio" class="cs_anchor radio" name="slider" id="slide1" />
+                <input type="radio" class="cs_anchor radio" name="slider" id="slide2" />
+                <input type="radio" class="cs_anchor radio" name="slider" id="slide3" />
+                <input type="radio" class="cs_anchor radio" name="slider" id="play1" checked="" />
 
-    <div class="images">
-       <div class="images-inner">
-        <div class="image-slide">
-            <div class="image"><img src="./picture/canhdong1.jpg"></div>
+                <div class="images">
+                    <div class="images-inner">
+                        <div class="image-slide">
+                            <img class="image" src="./picture/canhdong1.jpg">
+                        </div>
+                        <div class="image-slide">
+                            <img class="image" src="./picture/canhdong2.jpg">
+                        </div>
+                        <div class="image-slide">
+                            <img class="image" src="./picture/canhdong3.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="image-slide">
-            <div class="image"><img src="./picture/canhdong2.jpg"></div>
-        </div>
-        <div class="image-slide">
-          <div class="image"><img src="./picture/canhdong3.jpg"></div>
-        </div>
-      </div>
-    </div>
-  
-</div>
+        
+        <div class="container-map">
+            <div id="map"></div>
         </div>
     </div>
 
     <script>
-        window.onscroll = function() {myFunction()};
+        window.onscroll = function () { myFunction() };
         function myFunction() {
-            if (document.documentElement.scrollTop >36) {
-                document.getElementById("menu_nav").setAttribute('class','menu_scroll');
+            if (document.documentElement.scrollTop > 36) {
+                document.getElementById("menu_nav").setAttribute('class', 'menu_scroll');
             } else {
-                document.getElementById("menu_nav").setAttribute('class','menu');
+                document.getElementById("menu_nav").setAttribute('class', 'menu');
+            }
+
+            if (document.documentElement.scrollTop > 420) {
+                document.getElementsByClassName('container-map')[0].style.marginTop = "0";
             }
         }
 
-        var responsiveSlider = function() {
-
-            var slider = document.getElementById("slider");
-            var sliderWidth = slider.offsetWidth;
-            var slideList = document.getElementById("slideWrap");
-            var count = 1;
-            var items = slideList.querySelectorAll("li").length;
-            
-            window.addEventListener('resize', function() {
-              sliderWidth = slider.offsetWidth;
-            });
-            
-            var prevSlide = function() {
-              if(count > 1) {
-                count = count - 2;
-                slideList.style.left = "-" + count * sliderWidth + "px";
-                count++;
-              }
-              else if(count = 1) {
-                count = items - 1;
-                slideList.style.left = "-" + count * sliderWidth + "px";
-                count++;
-              }
-            };
-            
-            var nextSlide = function() {
-              if(count < items) {
-                slideList.style.left = "-" + count * sliderWidth + "px";
-                count++;
-              }
-              else if(count = items) {
-                slideList.style.left = "0px";
-                count = 1;
-              }
-            };
-            
-            next.addEventListener("click", function() {
-              nextSlide();
-            });
-            
-            prev.addEventListener("click", function() {
-              prevSlide();
-            });
-            
-            setInterval(function() {
-              nextSlide()
-            }, 5000);
-            
-            };
-            
-            window.onload = function() {
-            responsiveSlider();  
+        setInterval(() => {
+            if (document.getElementsByTagName('a')[7]) {
+                document.getElementsByTagName('a')[7].text = '';
             }
+            if (document.getElementById('map_access')) {
+                document.getElementById('map_access').style.display = 'none';
+            }
+        }, 0.1)
     </script>
 </body>
+
 </html>
