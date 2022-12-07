@@ -96,14 +96,14 @@ ul .box{
     display: flex;
     align-items: center;
 
-    width: 10rem;
+    width: 13rem;
 }
 ul .box .nav-link{
-    width: 10rem;
+    width: 13rem;
     padding: 0.5rem 0;
 }
 ul .box .nav-link-1{
-    width: 10rem;
+    width: 13rem;
     padding: 0.5rem 0;
 }
 .menu li:hover .sub-menu{
@@ -120,7 +120,7 @@ ul .box .nav-link-1{
     background:#f9f8f8;
     display: none;
     flex-direction: column;
-    width: 10rem;
+    width: 13rem;
     padding: 0.5rem 0;
 }
 .sub-menu li {
