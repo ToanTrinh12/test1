@@ -1,165 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" type="image/x-icon" href="picture/favicon.ico">
+        <script src="js/mapdata.js"></script>
+        <script src="js/countrymap.js"></script>
+        <title>Travel VietNam</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" type="image/x-icon" href="picture/favicon.ico">
-    <script src="js/mapdata.js"></script>
-    <script src="js/countrymap.js"></script>
-    <title>Travel VietNam</title>
-</head>
-
-<body>
-    <nav class="menu" id="menu_nav">
-        <ul>
-            <div class="logo">
-                <a href="#"><img src="./picture/logo.jpg" alt=""></a>
-            </div>
-            <div class="box">
-                <li><a href="#" class="nav-link"><img src="./picture/home1.jpg" alt="" class="mr-7">HOME</a></li>
-            </div>
-            <div class="box">
-                <li><a href="#" class="nav-link-1"><img src="./picture/water.png" alt="" class="mr-7">WATER</a>
-                    <ul class="sub-menu">
-                        <li><a href="#" class="sub-m-1">VietNam</a></li>
-                        <li><a href="#" class="sub-m-1">Laos</a></li>
-                        <li><a href="#" class="sub-m-1">Cambodia</a></li>
-                    </ul>
-                </li>
-            </div>
-            <div class="box">
-                <li><a href="#" class="nav-link"><img src="./picture/blog.jpg" alt="" class="mr-7">BLOG</a></li>
-            </div>
-            <div class="box">
-                <li><a href="#" class="nav-link"><img src="./picture/inquire.png" alt="" class="mr-7">INQUIRE NOW</a></li>
-            </div>
-            <div>
-                <button class="navbar-button" onclick="openOrCloseSiderbar()">
-                    <span class="navbar-button-icon">
-                        <i class="fa fa-bars"></i>
-                    </span>
-                </button>
-            </div>
-        </ul>
-    </nav>
-
-    <nav>
-        <ul>
-            <div class="sidebar-mobile d-none">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <img src="./picture/home1.jpg" alt="ảnh"><span class="ml-7">HOME</span>
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#">
-                            <img src="./picture/water.png" alt=""><span class="ml-7">WATER</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-item"> <a class="" href="#"> VietNam </a> </li>
-                            <li class="dropdown-item"> <a class="" href="#"> Laos </a> </li>
-                            <li class="dropdown-item"> <a class="" href="#"> Cambodia </a> </li>
+    <body>
+        <nav class="menu" id="menu_nav">
+            <ul>
+                <div class="logo">
+                    <a href="#"><img src="./picture/logo.jpg" alt=""></a>
+                </div>
+                <div class="box">
+                    <li><a href="#" class="nav-link"><img src="./picture/home1.jpg" alt="" class="mr-7">HOME</a></li>
+                </div>
+                <div class="box">
+                    <li><a href="#" class="nav-link-1"><img src="./picture/water.png" alt="" class="mr-7">WATER</a>
+                        <ul class="sub-menu">
+                            <li><a href="#" class="sub-m-1">VietNam</a></li>
+                            <li><a href="#" class="sub-m-1">Laos</a></li>
+                            <li><a href="#" class="sub-m-1">Cambodia</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <img src="./picture/blog.jpg" alt=""><span class="ml-7">BLOG</span>
-                        </a>
+                </div>
+                <div class="box">
+                    <li><a href="#" class="nav-link"><img src="./picture/blog.jpg" alt="" class="mr-7">BLOG</a></li>
+                </div>
+                <div class="box">
+                    <li><a href="#" class="nav-link"><img src="./picture/inquire.png" alt="" class="mr-7">INQUIRE NOW</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <img src="./picture/inquire.png" alt=""><span class="ml-7">INQUIRE NOW</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </ul>
-    </nav>
+                </div>
+                <div>
+                    <button class="navbar-button" onclick="openOrCloseSiderbar()">
+                        <span class="navbar-button-icon">
+                            <i class="fa fa-bars"></i>
+                        </span>
+                    </button>
+                </div>
+            </ul>
+        </nav>
 
-    <div class="picture-paddyfield">
-        <div class="khoi_anh">
-            <img class="mySlides w3-animate-right" src="./picture/canhdong1.jpg">
-            <img class="mySlides w3-animate-right" src="./picture/canhdong2.jpg">
-            <img class="mySlides w3-animate-right" src="./picture/canhdong3.jpg">
-            <div id="homepage-slider" class="st-slider">
-                <input type="radio" class="cs_anchor radio" name="slider" id="slide1" />
-                <input type="radio" class="cs_anchor radio" name="slider" id="slide2" />
-                <input type="radio" class="cs_anchor radio" name="slider" id="slide3" />
-                <input type="radio" class="cs_anchor radio" name="slider" id="play1" checked="" />
+        <nav>
+            <ul>
+                <div class="sidebar-mobile d-none">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <img src="./picture/home1.jpg" alt="ảnh"><span class="ml-7">HOME</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#">
+                                <img src="./picture/water.png" alt=""><span class="ml-7">WATER</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item"> <a class="" href="#"> VietNam </a> </li>
+                                <li class="dropdown-item"> <a class="" href="#"> Laos </a> </li>
+                                <li class="dropdown-item"> <a class="" href="#"> Cambodia </a> </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <img src="./picture/blog.jpg" alt=""><span class="ml-7">BLOG</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <img src="./picture/inquire.png" alt=""><span class="ml-7">INQUIRE NOW</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </ul>
+        </nav>
 
-                <div class="images">
-                    <div class="images-inner">
-                        <div class="image-slide">
-                            <img class="image" src="./picture/canhdong1.jpg">
-                        </div>
-                        <div class="image-slide">
-                            <img class="image" src="./picture/canhdong2.jpg">
-                        </div>
-                        <div class="image-slide">
-                            <img class="image" src="./picture/canhdong3.jpg">
+        <div class="picture-paddyfield">
+            <div class="khoi_anh">
+                <img class="mySlides w3-animate-right" src="./picture/canhdong1.jpg">
+                <img class="mySlides w3-animate-right" src="./picture/canhdong2.jpg">
+                <img class="mySlides w3-animate-right" src="./picture/canhdong3.jpg">
+                <div id="homepage-slider" class="st-slider">
+                    <input type="radio" class="cs_anchor radio" name="slider" id="slide1" />
+                    <input type="radio" class="cs_anchor radio" name="slider" id="slide2" />
+                    <input type="radio" class="cs_anchor radio" name="slider" id="slide3" />
+                    <input type="radio" class="cs_anchor radio" name="slider" id="play1" checked="" />
+
+                    <div class="images">
+                        <div class="images-inner">
+                            <div class="image-slide">
+                                <img class="image" src="./picture/canhdong1.jpg">
+                            </div>
+                            <div class="image-slide">
+                                <img class="image" src="./picture/canhdong2.jpg">
+                            </div>
+                            <div class="image-slide">
+                                <img class="image" src="./picture/canhdong3.jpg">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="container-map">
+                <div id="map"></div>
+            </div>
+
+            <div class="about">
+                <div class="container-abount">
+                    <div class="about-title">
+                        <p>
+                            Bienvenue à <br>
+                            <span style="border-bottom: 4px double #94C120">
+                                Vietnam Impression Travelz
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="content-about">
+                        <div style="text-align: justify">
+                            Depuis 2007, IVN propose des circuits privés et sur-mesure sur l'ensemble du Vietnam.
+                            Forts de notre expérience et de notre succès, nous avons également étendu notre expertise
+                            au-delà des frontières Cambodgiennes.
+                            <br>&nbsp;<br>
+                            Nous vous présentons ici toutes nos photos et nos témoignages, sans OGM, ni trucage, afin que
+                            vous puissiez vous faire l’idée
+                            la plus juste qui soit des scènes de la vie quotidienne et des paysages de notre magnifique pays
+                            d’adoption. Vous y trouverez
+                            également notre sélection de logements de charme, chez l’habitant, en hôtel ou maison d’hôtes.
+                            <br>&nbsp;<br>
+                            Notre équipe vietnamienne et française offre des prestations de haute qualité et garantit un
+                            tourisme responsable, respectueux du
+                            Vietnam et de ses habitants. Elle saura répondre au plus vite à toutes vos interrogations, vous
+                            pouvez également recevoir un devis
+                            par e-mail, gratuit et personnalisé.
+                            <br>&nbsp;<br>
+                            IVN fait partie d'Un Monde Autrement, 1er réseau d'artisans du voyage, qui regroupe également
+                            Bali Autrement, Thailande Autrement,
+                            Philippines Autrement, Cambodge Autrement, Madagascar Autrement, Laos Autrement et Tunisie
+                            Autrement
+                            <br>&nbsp;<br>
+                            Bonne visite et à très bientôt pour un voyage au Vietnam !
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-youtube">
+                    <div class="youtube">
+                        <iframe class="responsive-iframe" src="https://www.youtube.com/embed/PLSHmNSpfLU?autoplay=1&mute=1"
+                            title="Những Bài Hát Lofi Acoustic Tiếng Anh Cực Chill Hay Nhất | Nhạc Lofi Chill Tik Tok Nhẹ Nhàng"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="member">
+                    <div class="title-member">
+                        <h2 style="font-weight: 600; font-family: font-h2">Nos Members</p>
+                    </div>
+
+                    <div class="content-member">
+                        <div class="member-item">
+                            <img class="img-member"
+                                src="https://cdn.popsww.com/blog/sites/2/2021/03/doraemon-wiki-mieng-cua-doraemon.png"
+                                alt="">
+                            <p>Doraemon</p>
+                            <p class="info-member" style="color: #94C120">Mr.D</p>
+                            <p class="info-member">Tel: +84 987654321</p>
+                            <p class="info-member">Mail: doraemon@gmail.com</p>
+                        </div>
+                        <div class="member-item">
+                            <img class="img-member"
+                                src="https://img.wattpad.com/c72269c4071a6a6a5c3612219c6d406d3cd85433/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f344c61447233457833326e7654773d3d2d3935343433353336302e313633353962613433303466333833393138373538323930303239322e6a7067?s=fit&w=720&h=720"
+                                alt="">
+                            <p>Nobita</p>
+                            <p class="info-member" style="color: #94C120">Mr.T</p>
+                            <p class="info-member">Tel: +84 123456789</p>
+                            <p class="info-member">Mail: nobita@gmail.com</p>
+                        </div>
+                        <div class="member-item">
+                            <img class="img-member"
+                                src="https://i.pinimg.com/originals/64/7c/50/647c50f173f4a21a26165551cef3d37b.jpg" alt="">
+                            <p>Shizuka</p>
+                            <p class="info-member" style="color: #94C120">Mrs.S</p>
+                            <p class="info-member">Tel: +84 147258369</p>
+                            <p class="info-member">Mail: shizuka@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img style="object-fit: cover; width: 100%; max-height: 500px;" src="picture/travel.jpg" alt="">
+            </div>
+
+            <div class="footer">
+                <p style="text-align: center; padding: 10px; color: white; font-weight: 400; font-size: 14px;">
+                    Copyright © Viet Nam Impresstion Travel. All rights reserved. Power by: 
+                    <a href="#" style="text-decoration: none; color: #94C120">TRAVEL.VN</a>
+                </p>
+            </div>
         </div>
 
-        <div class="container-map">
-            <div id="map"></div>
-        </div>
-    </div>
+        <script>
+            window.onscroll = () => {
+                fixedScroll();
+            };
 
-    <script>
-        window.onscroll = () => {
-            fixedScroll();
-        };
+            fixedScroll = () => {
+                if (document.documentElement.scrollTop > 36) {
+                    document.getElementById("menu_nav").setAttribute('class', 'menu_scroll');
+                } else {
+                    document.getElementById("menu_nav").setAttribute('class', 'menu');
+                }
 
-        fixedScroll = () => {
-            if (document.documentElement.scrollTop > 36) {
-                document.getElementById("menu_nav").setAttribute('class', 'menu_scroll');
-            } else {
-                document.getElementById("menu_nav").setAttribute('class', 'menu');
-            }
+                if (document.documentElement.scrollTop > 330) {
+                    document.getElementsByClassName('container-map')[0].style.marginTop = "0";
+                }
 
-            if (document.documentElement.scrollTop > 330) {
-                document.getElementsByClassName('container-map')[0].style.marginTop = "0";
-            }
-        };
+                const about = document.getElementsByClassName('about')[0].offsetTop;
+                if (document.documentElement.scrollTop > about - 1200) {
+                    document.getElementsByClassName('about')[0].style.marginTop = "30px";
+                }
 
-        setInterval(() => {
-            const element = document.getElementsByTagName('a');
+                const carousel = document.getElementsByClassName('carousel-item')[0].offsetTop;
+                if (document.documentElement.scrollTop > carousel - 1200) {
+                    document.getElementsByClassName('carousel-item')[0].style.marginTop = "30px";
+                }
+            };
 
-            if (element && element.length > 0) {
-                for (let i = 0; i < element.length; i++) {
-                    if (element[i].title === 'For evaluation use only.') {
-                        element[i].textContent = '';
+            setInterval(() => {
+                const element = document.getElementsByTagName('a');
+
+                if (element && element.length > 0) {
+                    for (let i = 0; i < element.length; i++) {
+                        if (element[i].title === 'For evaluation use only.') {
+                            element[i].textContent = '';
+                        }
                     }
                 }
-            }
 
-            if (document.getElementById('map_access')) {
-                document.getElementById('map_access').style.display = 'none';
-            }
-        }, 1);
+                if (document.getElementById('map_access')) {
+                    document.getElementById('map_access').style.display = 'none';
+                }
+            }, 1);
 
-        openOrCloseSiderbar = () => {
-            const element = document.getElementsByClassName('sidebar-mobile')[0];
-            element.className === 'sidebar-mobile dismiss' || element.className === 'sidebar-mobile d-none'
-                ? element.className = 'sidebar-mobile selected'
-                : element.className = 'sidebar-mobile dismiss';
-        };
+            openOrCloseSiderbar = () => {
+                const element = document.getElementsByClassName('sidebar-mobile')[0];
+                element.className === 'sidebar-mobile dismiss' || element.className === 'sidebar-mobile d-none'
+                    ? element.className = 'sidebar-mobile selected'
+                    : element.className = 'sidebar-mobile dismiss';
+            };
 
-        window.onresize = () => {
-            if (document.body.offsetWidth > 983) {
-                document.getElementsByClassName('sidebar-mobile')[0].className = 'sidebar-mobile d-none';
+            window.onresize = () => {
+                if (document.body.offsetWidth > 983) {
+                    document.getElementsByClassName('sidebar-mobile')[0].className = 'sidebar-mobile d-none';
+                }
             }
-        }
-    </script>
-</body>
+        </script>
+    </body>
 
 </html>

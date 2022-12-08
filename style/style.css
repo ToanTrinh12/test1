@@ -124,6 +124,7 @@ nav ul .logo img {
         display: flex;
         height: 3rem;
         align-items: center;
+        padding: 30px;
         position: fixed;
         top: 0px;
         z-index: 999;
@@ -483,8 +484,6 @@ ul .box .nav-link-1 {
     display: flex;
     flex-direction: column;
     animation: animatebottom 0.4s;
-    /* padding: 0; */
-    /* margin: 5px 20px; */
 }
 
 .dropdown:hover .dropdown-menu {
@@ -526,4 +525,121 @@ ul .box .nav-link-1 {
 
 .mr-7 {
     margin-right: 7px;
+}
+
+.about {
+    margin-top: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    transition: .8s;
+}
+
+@media only screen and (min-width: 769px) {
+    .container-abount {
+        max-width: 720px;
+    }
+
+    .container-youtube {
+        width: 760px; 
+        height: 400px; 
+        margin-top: 10px;
+    }
+
+    .youtube {
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        padding-top: 56.25%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container-abount {
+        max-width: 550px;
+        padding: 0 15px;
+    }
+
+    .container-youtube {
+        width: 100%; 
+        height: auto; 
+        margin-top: 10px;
+    }
+
+    .youtube {
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        padding-top: 56.25%;
+    }
+}
+
+.about-title * {
+    font-size: 36px; 
+    color: #86AD33;
+    text-align: center;
+    font-family: "font-h2";
+}
+
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.member {
+    margin-top: 50px;
+}
+
+.title-member {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;   
+    margin-bottom: 10px;
+}
+
+.content-member {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.member-item {
+    padding: 5px 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-member {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.info-member {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.footer {
+    /* height: 270px; */
+    background-color: #5c841d;
+}
+
+.carousel-item {
+    margin-top: 400px;
+    transition: .8s;
 }
