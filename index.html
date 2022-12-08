@@ -5,42 +5,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="clone.css">
+    <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/x-icon" href="picture/favicon.ico">
-    <script src="mapdata.js"></script>
-    <script src="countrymap.js"></script>
-    <title>Travel</title>
+    <script src="js/mapdata.js"></script>
+    <script src="js/countrymap.js"></script>
+    <title>Travel VietNam</title>
 </head>
 
 <body>
     <nav class="menu" id="menu_nav">
         <ul>
             <div class="logo">
-                <img src="./picture/logo.jpg" alt="ảnh">
-            </div>
-
-            <div class="box">
-                <li><a href="" class="nav-link"><img src="./picture/home1.jpg" alt="ảnh">HOME</a></li>
+                <a href="#"><img src="./picture/logo.jpg" alt=""></a>
             </div>
             <div class="box">
-                <li><a href="" class="nav-link-1"><img src="./picture/water.png" alt="ảnh">WATER</a>
+                <li><a href="#" class="nav-link"><img src="./picture/home1.jpg" alt="" class="mr-7">HOME</a></li>
+            </div>
+            <div class="box">
+                <li><a href="#" class="nav-link-1"><img src="./picture/water.png" alt="" class="mr-7">WATER</a>
                     <ul class="sub-menu">
-                        <li><a href="" class="sub-m-1">VietNam</a></li>
-                        <li><a href="" class="sub-m-1">Laos</a></li>
-                        <li><a href="" class="sub-m-1">Cambodia</a></li>
+                        <li><a href="#" class="sub-m-1">VietNam</a></li>
+                        <li><a href="#" class="sub-m-1">Laos</a></li>
+                        <li><a href="#" class="sub-m-1">Cambodia</a></li>
                     </ul>
                 </li>
             </div>
             <div class="box">
-                <li><a href="" class="nav-link"><img src="./picture/blog.jpg" alt="ảnh">BLOG</a></li>
+                <li><a href="#" class="nav-link"><img src="./picture/blog.jpg" alt="" class="mr-7">BLOG</a></li>
             </div>
             <div class="box">
-                <li><a href="" class="nav-link"><img src="./picture/inquire.png" alt="ảnh">INQUIRE NOW</a></li>
+                <li><a href="#" class="nav-link"><img src="./picture/inquire.png" alt="" class="mr-7">INQUIRE NOW</a></li>
+            </div>
+            <div>
+                <button class="navbar-button" onclick="openOrCloseSiderbar()">
+                    <span class="navbar-button-icon">
+                        <i class="fa fa-bars"></i>
+                    </span>
+                </button>
             </div>
         </ul>
     </nav>
-        
+
+    <nav>
+        <ul>
+            <div class="sidebar-mobile d-none">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="./picture/home1.jpg" alt="ảnh"><span class="ml-7">HOME</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#">
+                            <img src="./picture/water.png" alt=""><span class="ml-7">WATER</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"> <a class="" href="#"> VietNam </a> </li>
+                            <li class="dropdown-item"> <a class="" href="#"> Laos </a> </li>
+                            <li class="dropdown-item"> <a class="" href="#"> Cambodia </a> </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="./picture/blog.jpg" alt=""><span class="ml-7">BLOG</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="./picture/inquire.png" alt=""><span class="ml-7">INQUIRE NOW</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </ul>
+    </nav>
+
     <div class="picture-paddyfield">
         <div class="khoi_anh">
             <img class="mySlides w3-animate-right" src="./picture/canhdong1.jpg">
@@ -67,34 +108,57 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="container-map">
             <div id="map"></div>
         </div>
     </div>
 
     <script>
-        window.onscroll = function () { myFunction() };
-        function myFunction() {
+        window.onscroll = () => {
+            fixedScroll();
+        };
+
+        fixedScroll = () => {
             if (document.documentElement.scrollTop > 36) {
                 document.getElementById("menu_nav").setAttribute('class', 'menu_scroll');
             } else {
                 document.getElementById("menu_nav").setAttribute('class', 'menu');
             }
 
-            if (document.documentElement.scrollTop > 420) {
+            if (document.documentElement.scrollTop > 330) {
                 document.getElementsByClassName('container-map')[0].style.marginTop = "0";
             }
-        }
+        };
 
         setInterval(() => {
-            if (document.getElementsByTagName('a')[7]) {
-                document.getElementsByTagName('a')[7].text = '';
+            const element = document.getElementsByTagName('a');
+
+            if (element && element.length > 0) {
+                for (let i = 0; i < element.length; i++) {
+                    if (element[i].title === 'For evaluation use only.') {
+                        element[i].textContent = '';
+                    }
+                }
             }
+
             if (document.getElementById('map_access')) {
                 document.getElementById('map_access').style.display = 'none';
             }
-        }, 0.1)
+        }, 1);
+
+        openOrCloseSiderbar = () => {
+            const element = document.getElementsByClassName('sidebar-mobile')[0];
+            element.className === 'sidebar-mobile dismiss' || element.className === 'sidebar-mobile d-none'
+                ? element.className = 'sidebar-mobile selected'
+                : element.className = 'sidebar-mobile dismiss';
+        };
+
+        window.onresize = () => {
+            if (document.body.offsetWidth > 983) {
+                document.getElementsByClassName('sidebar-mobile')[0].className = 'sidebar-mobile d-none';
+            }
+        }
     </script>
 </body>
 
